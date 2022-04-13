@@ -42,6 +42,10 @@ html.terminalMode {
 	--textTableOfContents: var(--textPrimary);
 }
 
+body {
+	margin: 0;
+}
+
 .QRContent {
 	background-color: var(--primary);
 	color: var(--textPrimary);
