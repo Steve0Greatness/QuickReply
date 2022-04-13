@@ -1,61 +1,112 @@
-body {
-	background: #bceae8 !important;
-	font-family: Arial;
-	}
+html.lightMode {
+	--button: #96ff9f;
+	--textButton: #000;
+	--buttonBorder: #ccc;
+	--tableOfContents: #A7D4D2;
+	--tableOfContentsBorder: black;
+	--copy: #f8f8f8;
+	--copyBorder: #ccc;
+	--textTableOfContents: var(--textPrimary);
+}
+
+html.darkMode {
+	--button: green;
+	--textButton: #000;
+	--buttonBorder: #fefefe;
+	--tableOfContents: #252525;
+	--tableOfContentsBorder: #ccc;
+	--copy: #555;
+	--copyBorder: #fefefe;
+	--textTableOfContents: #ccc;
+}
+
+html.scratchMode {
+	--button: var(--secondary);
+	--textButton: var(--textSecondary);
+	--buttonBorder: none;
+	--tableOfContents: #fff;
+	--tableOfContentsBorder: #000;
+	--copy: #fff;
+	--copyBorder: #000;
+	--textTableOfContents: #545465;
+}
+
+html.terminalMode {
+	--button: var(--secondary);
+	--textButton: var(--textSecondary);
+	--buttonBorder: none;
+	--tableOfContents: var(--primary);
+	--tableOfContentsBorder: black;
+	--copy: #252525;
+	--copyBorder: none;
+	--textTableOfContents: var(--textPrimary);
+}
+
+.QRContent {
+	background-color: var(--primary);
+	color: var(--textPrimary);
+}
 
 .container {
 	margin-bottom: 40px;
 	margin-left: 10px;
-	}
+}
 
 .CopyText {
 	float: left;
 	width: 50%;
 	height: 40px;
 	padding: 10px 20px;
-	border: 2px solid #ccc;
+	border: 2px solid var(--copyBorder);
 	border-radius: 10px;
-	background-color: #f8f8f8;
+	color: inherit;
+	background-color: var(--copy);
 	font-family: Helvetica, Arial, sans-serif;
 	resize: none;
-	}
+}
 
 button:not(.privacyButton) {
+	color: var(--textButton);
 	margin-left: 5px;
 	margin-top: 7px;
 	float: left;
 	padding: 15px 15px;
-	border: 2px solid #ccc;
+	border: 2px solid var(--buttonBorder);
 	border-radius: 10px;
-	background-color: #96ff9f;
+	background-color: var(--button);
 	font-family: Helvetica, Arial, sans-serif;
-	}
+}
 
 .TOC {
-  float: left;
-	border: 2px solid black;
+	float: left;
+	border: 2px solid var(--tableOfContentsBorder);
 	width: 150px;
 	height: 250px;
 	margin-left: 20px;
 	position: fixed;
 	right: 5px;
 	bottom: 5px;
-	background: #A7D4D2;
+	background-color: var(--tableOfContents);
 	line-height: 20px;
-	}
+	color: var(--textTableOfContents);
+}
 
 .label {
 	margin-left: 10px
-	}
+}
 
-.PageLink:link, .PageLink:visited {
+.PageLink:any-link {
 	color: inherit;
 	background-color: transparent;
 	text-decoration: underline;
-	}
+}
 
 .PageLink:hover {
-	color: blue;
+	color: var(--linkHover);
 	background-color: transparent;
 	text-decoration: underline;
-	}
+}
+
+h3.TOC_Element {
+	text-align: center;
+}
